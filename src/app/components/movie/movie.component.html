@@ -1,4 +1,4 @@
-<p>movie works!</p>
+<p>Welcome To Movie App</p>
 <div class="movie-container">
     <div class="input-form">
         TITLE:
@@ -34,22 +34,33 @@
             </li>
            
         </div>
-        <button class="btn btn-primary" (click)="save()">ADD</button>
+        <svg (click)="save()" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="green" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+          </svg>
+        <!-- <button class="btn btn-primary" (click)="save()">+</button> -->
     </div>
     <div class="movie" *ngFor="let movie of movieList">
         <a routerLink="/allMovies/{{movie.id}}">
             <div class="img-container">
                 <img class="image" [src]="movie.image" alt="">
+                <div class="overlay">
+                    <!-- <div class="text">Details</div> -->
+                    <div class="details">
+                        <p class="title">{{movie.title}}</p>
+                        <p class="year">{{movie.year}}</p>
+                        <p class="id">ID : {{movie.id}}</p>
+                        <!-- <p class="trailer">Trailer Link : {{movie.trailer}}</p> -->
+                        <p class="ratings">Rating : {{movie.ratings}}</p>
+                        <p *ngIf="movie.ratings > 3">*Suggested*</p>
+                          <!-- <svg (click)="delete(movie)" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dash-circle-fill" fill="red" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+                          </svg>   -->
+                        <!-- <button class="btn btn-danger" (click)="delete(movie)">-</button> -->
+                    </div>
+                  </div>
             </div>
         </a>
-            <div class="details">
-                <p class="title">{{movie.title}}</p>
-                <p class="year">{{movie.year}}</p>
-                <p class="id">ID : {{movie.id}}</p>
-                <p class="ratings">Rating : {{movie.ratings}}</p>
-                <p *ngIf="movie.ratings > 3">**Recommended</p>
-                <button class="btn btn-danger" (click)="delete(movie)">DELETE</button>
-            </div>
+           
         
     </div>
 

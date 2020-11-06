@@ -1,9 +1,11 @@
 // @import '../../../variables.scss';
-
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 .movie-container {
+  font-family: 'Syne Mono', monospace;
   .input-form {
     border: 1px solid gray;
     padding: 20px;
+    background-color: blanchedalmond;
 
     input {
       display: block;
@@ -13,19 +15,20 @@
     .radio-btns {
       li {
         list-style: none;
+        margin-left: 10px;
         display: inline-block;
-        display: flex;
       }
     }
   }
 
   .movie {
-    background: lightblue;
-    display: flex;
-    width: 300px;
+    background: lightblue; 
+    width: 150px;
     padding: 12px;
     border-radius: 5px;
     margin-bottom: 12px;
+    display: inline-flex;
+    margin-left: 10px;
     position: relative;
 
     a {
@@ -38,17 +41,26 @@
 
     .image {
       height: 150px;
+      width : 130px;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+       transform: scale(1);
+      -webkit-transition: .3s ease;
+       transition: .3s ease;
+      
     }
-
+  
     .details {
       font-size: 15px;
-      margin-left: 12px;
+      color: white;
+      // margin-left: 12px;
+      text-align: center;
       p {
         margin: 0;
       }
       .title {
-        color: red;
-        font-size: 24px;
+        color: rgb(243, 146, 246);
+        font-size: 20px;
       }
 
     //   .title {
@@ -56,20 +68,57 @@
     //   }
 
       .id {
-          color: green;
+          color: rgb(110, 226, 106);
       }
 
       .ratings {
         height: 20px;
+        color:palevioletred;
       }
 
     }
 
     button {
-      //background: white;
       position: absolute;
       right: 12px;
       bottom: 12px;
+    }
+
+    svg{
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0%;
+      transition: .5s ease;
+      background-color: #17191ab0;
+    }
+    .img-container:hover .overlay {
+      opacity: 1;
+    }
+
+    .img-container:hover .image {
+      -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+      transform: scale(1.15);
+    }
+    .details {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
     }
   }
 

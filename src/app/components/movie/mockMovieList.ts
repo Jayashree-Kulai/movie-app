@@ -37,4 +37,14 @@ export const MOVIES: Movie[] = [
         id : '444'
     },
 
+    {
+        title: "Malgudi Days",
+        year: 2018,
+        image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Malgudi_Days_%282020_film%29.jpg/220px-Malgudi_Days_%282020_film%29.jpg",
+        ratings: 5,
+        trailer: "https://www.youtube.com/watch?v=3N30JNtBLg4",
+        id : '444'
+    },
+
+
 ]
