@@ -1,0 +1,83 @@
+// @import '../../../variables.scss';
+
+.movie-container {
+  .input-form {
+    border: 1px solid gray;
+    padding: 20px;
+
+    input {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .radio-btns {
+      li {
+        list-style: none;
+        display: inline-block;
+        display: flex;
+      }
+    }
+  }
+
+  .movie {
+    background: lightblue;
+    display: flex;
+    width: 300px;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    position: relative;
+
+    a {
+      color : unset;
+      &:hover {
+        color : unset;
+        text-decoration : none;
+      }
+    }
+
+    .image {
+      height: 150px;
+    }
+
+    .details {
+      font-size: 15px;
+      margin-left: 12px;
+      p {
+        margin: 0;
+      }
+      .title {
+        color: red;
+        font-size: 24px;
+      }
+
+    //   .title {
+    //     color: blue;
+    //   }
+
+      .id {
+          color: green;
+      }
+
+      .ratings {
+        height: 20px;
+      }
+
+    }
+
+    button {
+      //background: white;
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+    }
+  }
+
+  .movie:nth-child(even) {
+    background: yellow;
+  }
+
+  
+
+  
+}

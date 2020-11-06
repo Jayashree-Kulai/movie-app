@@ -1,0 +1,113 @@
+<p>movie works!</p>
+<div class="movie-container">
+    <div class="input-form">
+        TITLE:
+        <input [(ngModel)]="movie.title" placeholder="title" type="text">
+        YEAR:
+        <input [(ngModel)]="movie.year" placeholder="year" type="text">
+        POSTER:
+        <input [(ngModel)]="movie.image" placeholder="image" type="text">
+        Trailer:
+        <input [(ngModel)]="movie.trailer" placeholder="trailer" type="text">
+
+        <div class="radio-btns">
+            RATINGS:
+            <li>
+                <input type="radio" name="ratings" id="one" [(ngModel)]="movie.ratings" value="1">
+                <label for="one">1</label>
+            </li>
+            <li>
+                <input type="radio" name="ratings" id="two" [(ngModel)]="movie.ratings" value="2">
+                <label for="two">2</label>
+            </li>
+            <li>
+                <input type="radio" name="ratings" id="three" [(ngModel)]="movie.ratings" value="3">
+                <label for="three">3</label>
+            </li>
+            <li>
+                <input type="radio" name="ratings" id="four" [(ngModel)]="movie.ratings" value="4">
+                <label for="four">4</label>
+            </li>
+            <li>
+                <input type="radio" name="ratings" id="five" [(ngModel)]="movie.ratings" value="5">
+                <label for="five">5</label>
+            </li>
+           
+        </div>
+        <button class="btn btn-primary" (click)="save()">ADD</button>
+    </div>
+    <div class="movie" *ngFor="let movie of movieList">
+        <a routerLink="/allMovies/{{movie.id}}">
+            <div class="img-container">
+                <img class="image" [src]="movie.image" alt="">
+            </div>
+        </a>
+            <div class="details">
+                <p class="title">{{movie.title}}</p>
+                <p class="year">{{movie.year}}</p>
+                <p class="id">ID : {{movie.id}}</p>
+                <p class="ratings">Rating : {{movie.ratings}}</p>
+                <p *ngIf="movie.ratings > 3">**Recommended</p>
+                <button class="btn btn-danger" (click)="delete(movie)">DELETE</button>
+            </div>
+        
+    </div>
+
+</div>
+
+<!-- <div class="movie-container">
+    <div class="input-form">
+        TITLE:
+        <input [(ngModel)]="movie.title" placeholder="title" type="text">
+        YEAR:
+        <input [(ngModel)]="movie.year" placeholder="year" type="text">
+        POSTER:
+        <input [(ngModel)]="movie.image" placeholder="image" type="text">
+        Trailer:
+        <input [(ngModel)]="movie.trailer" placeholder="trailer" type="text">
+
+        <div class="radio-btns">
+            RATINGS:
+            <li>
+                <input type="radio" name="ratings" id="one" [(ngModel)]="movie.ratings" value="1">
+                <label for="one">1</label>
+            </li>
+            <li>
+                <input type="radio" name="ratings" id="two" [(ngModel)]="movie.ratings" value="2">
+                <label for="two">2</label>
+            </li>
+            <li>
+                <input type="radio" name="ratings" id="three" [(ngModel)]="movie.ratings" value="3">
+                <label for="three">3</label>
+            </li>
+            <li>
+                <input type="radio" name="ratings" id="four" [(ngModel)]="movie.ratings" value="4">
+                <label for="four">4</label>
+            </li>
+            <li>
+                <input type="radio" name="ratings" id="five" [(ngModel)]="movie.ratings" value="5">
+                <label for="five">5</label>
+            </li>
+           
+        </div>
+        <button class="btn btn-primary" (click)="save()">ADD</button>
+    </div>
+
+    <div class="movie" *ngFor="let movie of movieList">
+        <a routerLink="/allMovies/{{movie.id}}">
+            <div class="img-container">
+                <img class="image" [src]="movie.image" alt="">
+            </div>
+         
+            <div class="details">
+                <p class="title">{{movie.title}}</p>
+                <p class="year">{{movie.year}}</p>
+                <p class="id">ID : {{movie.id}}</p>
+                <p class="ratings">Rating : {{movie.ratings}}</p>
+                <p *ngIf="movie.ratings > 3">**Recommended</p>
+                <button class="btn btn-danger" (click)="delete(movie)">DELETE</button>
+            </div>
+        </a>
+    </div>
+
+</div> -->
